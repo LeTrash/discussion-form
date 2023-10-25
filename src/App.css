@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.question-box {
+  border: 1px solid blue;
+  padding: 16px;
+  position: relative;
+  margin: 10px;
+  max-width: 400px;
+}
+
+.question-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.reply-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+}
