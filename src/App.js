@@ -15,7 +15,7 @@ function App() {
         question="What are your opinions on registration?"
         onReplyClick={handleReplyClick}
       />
-      {/*Add more Questions componets as needed*/}
+      {/*Add more Questions components as needed*/}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { database } from "./firebase_setup/firebase";
+import db from "./firebase_setup/firebase";
 
 const Question = ({ questionID }) => {
   const [question, setQuestion] = useState("");
@@ -8,7 +8,7 @@ const Question = ({ questionID }) => {
   const [replyText, setReplyText] = useState("");
 
   useEffect(() => {
-    const questionRef = database.ref("question/${questionID");
+    const questionRef = db.ref("question/${questionID");
     questionRef.on("value", (snapshot) => {
       const data = snapshot.val();
       if (data) {
@@ -21,9 +21,9 @@ const Question = ({ questionID }) => {
     };
   }, [questionID]);
 
-  // const handleReplyClick = () => {
-  //   setShowReplyInput(!showReplyInput);
-  // };
+  const handleReplyClick = () => {
+    setShowReplyInput(!showReplyInput);
+  };
   // const handleReplyChange = (e) => {
   //   setReply(e.target.value);
   // };
@@ -31,7 +31,7 @@ const Question = ({ questionID }) => {
   const handleReplySubmit = () => {
     // console.timeLog("Submitted reply:", reply);
     // setReply("");
-    const replyRef = database.ref("questions/${questionID}/replies");
+    const replyRef = db.ref("questions/{questionID}/replies");
     const newReplyRef = replyRef.push();
     newReplyRef.set(replyText);
     setReplyText("");
